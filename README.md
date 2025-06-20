@@ -12,7 +12,7 @@ A personal Expense Tracker built using:
 
 🌐 Live URL
 
-Frontend: [https://expense-tracker-frontend.vercel.app](#)  
+Frontend: [https://expense-tracker2-two.vercel.app/](#)  
 
 
 ---
