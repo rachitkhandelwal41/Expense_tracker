@@ -1,7 +1,14 @@
 
 # 💰 Expense Tracker (Full Stack Project)
 
-A personal Expense Tracker built using:
+A full-featured personal **Expense Tracker** app to help users manage and visualize their monthly spending. Users can:
+
+- Add, view, update, and delete expenses
+- Set monthly budgets for different categories
+- Receive alerts when spending exceeds 80% or 100% of a budget
+- View spending summaries and trends using interactive charts
+
+Built using:
 
 - **Frontend**: React + TypeScript + Tailwind CSS
 - **Backend**: Node.js + Express + TypeScript
@@ -10,37 +17,35 @@ A personal Expense Tracker built using:
 
 ---
 
-🌐 Live URL
+## 🚀 Live Demo
 
-Frontend: [https://expense-tracker2-two.vercel.app/](#)  
-Test login Credentials
-email:hello@gmail.com
-password:hello@123
+**Frontend**: [https://expense-tracker2-two.vercel.app/](https://expense-tracker2-two.vercel.app/)  
+
+### 🔐 Test Login
+
+```
+
+Email: [hello@gmail.com](mailto:hello@gmail.com)
+Password: hello\@123
+
+````
 
 ---
 
 ## 🧪 Environment Variables
 
-### 🔐 Backend `.env` file
+### 🔐 Backend `.env` file (`Backend/.env`)
 
-Create a `.env` file inside the `Backend/` directory:
-
-```
-
-MONGO\_URL=""/
-JWT\_SECRET=""
-
-```
-
-### 🌍 Frontend `.env` file
-
-Create a `.env` file inside the `Frontend/` directory:
-
-```
-
-VITE\_BASE\_URL=[])
-
+```env
+MONGO_URL=mongodb+srv://randomuser:randompass@cluster0.random.mongodb.net/
+JWT_SECRET=randomsecret123
 ````
+
+### 🌍 Frontend `.env` file (`Frontend/.env`)
+
+```env
+VITE_BASE_URL=https://your-backend-url.com/api/v1
+```
 
 ---
 
@@ -51,20 +56,18 @@ VITE\_BASE\_URL=[])
 ```bash
 git clone https://github.com/rachitkhandelwal41/Expense_tracker.git
 cd Expense_tracker
-````
+```
 
 ---
 
 ## 📦 Backend Setup
-
-### Step-by-step:
 
 ```bash
 cd Backend
 npm install
 ```
 
-Update your `tsconfig.json` in the `Backend/` folder like this:
+### Update `tsconfig.json` in the `Backend` folder:
 
 ```json
 {
@@ -80,20 +83,15 @@ Update your `tsconfig.json` in the `Backend/` folder like this:
 }
 ```
 
-### Compile TypeScript to JavaScript:
+### Build TypeScript and Start the Server:
 
 ```bash
 npx tsc
-```
-
-### Start the server:
-
-```bash
 node dist/index.js
 ```
 
-Your backend should now be running on:
-**[http://localhost:3000](http://localhost:3000)**
+> Your backend should now be running at:
+> `http://localhost:3000`
 
 ---
 
@@ -105,82 +103,67 @@ npm install
 npm run dev
 ```
 
-Frontend will be available at:
-**[http://localhost:5173](http://localhost:5173)**
+> Frontend will be available at:
+> `http://localhost:5173`
 
 ---
 
-## 🔧 Hardcoded Budget URLs
+## 🔧 Budget Feature Note
 
-In your **budget page/component**, hardcode the following API endpoints:
-
-* **Set Budget:**
-
-```
-https://expense-tracker-gp93.onrender.com/api/v1/user/budget/set
-```
-
-* **Get Alerts:**
-
-```
-https://expense-tracker-gp333.onrender.com/api/v1/user/budget/alerts
-```
-
-These endpoints will connect to your deployed backend directly.
+In the Budget page/component, manually insert the deployed backend URL (e.g., `/budget/set`, `/budget/alerts`) where required.
 
 ---
 
-## 🪄 Build Frontend for Production
-
-If you want to build the frontend for deployment (e.g. for Vercel):
+## 🛠️ Build Frontend for Production
 
 ```bash
 cd Frontend
 npm run build
 ```
 
-This will output the production-ready files to the `/dist` directory.
+Build output will be in the `dist/` folder.
 
 ---
 
 ## 📤 Deployment Info
 
-### Render (Backend)
+### 🔁 Backend (Render)
 
-* Use the **`Backend/`** as root folder
-* Install command: `npm install`
-* Build command: `npx tsc`
-* Start command: `node dist/index.js`
-* Add environment variables in Render dashboard
+* Root Directory: `Backend/`
+* Install Command: `npm install`
+* Build Command: `npx tsc`
+* Start Command: `node dist/index.js`
+* Add environment variables (`MONGO_URL`, `JWT_SECRET`) in Render dashboard
 
-### Vercel (Frontend)
+### 🌐 Frontend (Vercel)
 
-* Use the **`Frontend/`** folder
-* Framework: `Vite`
-* Build command: `npm run build`
-* Output directory: `dist`
-* Add env var:
+* Root Directory: `Frontend/`
+* Framework: **Vite**
+* Build Command: `npm run build`
+* Output Directory: `dist`
+* Add env variable:
 
-  ```
-  
-  ```
+```env
+VITE_BASE_URL=https://your-backend-url.com/api/v1
+```
 
 ---
 
 ## ✅ Features
 
-* Set monthly budgets per category
-* Add expenses by category and date
-* Budget alerts when spending exceeds 80% or 100%
-* JWT-based user authentication
-* Clean, responsive UI with Tailwind CSS
+* ✅ Store and manage expenses by category
+* ✅ Add, update, and delete expenses
+* ✅ Set and update monthly budgets per category
+* ✅ Alerts when spending exceeds 80% or 100% of budget
+* ✅ Visualize data through category-wise pie charts and monthly trends using line graphs
+* ✅ Authentication using JWT
+* ✅ Clean, responsive UI built with Tailwind CSS
 
 ---
 
-## 🧠 Author
+## 👨‍💻 Author
 
 **Rachit Khandelwal**
-
 GitHub: [@rachitkhandelwal41](https://github.com/rachitkhandelwal41)
 
 ---
