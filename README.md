@@ -13,7 +13,9 @@ A personal Expense Tracker built using:
 🌐 Live URL
 
 Frontend: [https://expense-tracker2-two.vercel.app/](#)  
-
+Test login Credentials
+email:hello@gmail.com
+password:hello@123
 
 ---
 
