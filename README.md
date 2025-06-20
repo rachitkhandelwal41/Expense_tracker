@@ -25,8 +25,8 @@ Built using:
 
 ```
 
-Email: [hello@gmail.com](mailto:hello@gmail.com)
-Password: hello\@123
+Email: [hello@gmail.com]
+Password: hello@123
 
 ````
 
