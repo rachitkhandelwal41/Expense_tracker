@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const categories = [
@@ -26,8 +26,8 @@ type Alert = {
 };
 
 const BudgetManager = () => {
- const [month, setMonth] = useState<number>(new Date().getMonth());
-  const [year, setYear] = useState<number>(new Date().getFullYear());
+ const [month] = useState<number>(new Date().getMonth());
+  const [year] = useState<number>(new Date().getFullYear());
   const [budgets, setBudgets] = useState<Budgets>({});
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [message, setMessage] = useState<string>("");
@@ -47,7 +47,7 @@ const BudgetManager = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.post(
+       await axios.post(
         "https://expense-tracker-gp93.onrender.com/api/v1/user/budget/set",
         { month, year, budgets },
         {

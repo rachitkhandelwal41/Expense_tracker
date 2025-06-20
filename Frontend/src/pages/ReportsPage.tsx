@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllExpenses } from "../services/operations/receipt";
 import CategoryPieChart from "../components/CategoryPieChart";
 import SpendingLineChart from "../components/SpendingLineChart";

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { deleteExpense, getAllExpenses } from "../services/operations/receipt";
 import ExpenseRow from "./ExpenseRow";
 import { UpdateExpenseModal } from "./UpdateExpenseModal";
