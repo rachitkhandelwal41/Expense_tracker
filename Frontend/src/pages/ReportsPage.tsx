@@ -30,7 +30,7 @@ const ReportsPage = () => {
     return acc;
   }, {});
 
-  const topCategory = Object.entries(categoryStats).sort((a, b) => b[1] - a[1])[0]?.[0] || "N/A";
+  const topCategory = Object.entries(categoryStats).sort((a:any, b:any) => b[1] - a[1])[0]?.[0] || "N/A";
 
   const paymentStats = monthlyExpenses.reduce((acc: any, exp: any) => {
     acc[exp.paymentMethod] = (acc[exp.paymentMethod] || 0) + 1;
@@ -38,7 +38,7 @@ const ReportsPage = () => {
   }, {});
 
   const topPaymentMethods = Object.entries(paymentStats)
-    .sort((a, b) => b[1] - a[1])
+    .sort((a:any, b:any) => b[1] - a[1])
     .slice(0, 3)
     .map(([method]) => method);
 

@@ -11,19 +11,32 @@ const categories = [
   "Utilities",
   "Other",
 ];
+type Category = (typeof categories)[number];
+
+type Budgets = {
+  [key in Category]?: number;
+};
+
+type Alert = {
+  category: string;
+  budget: number;
+  spent: number;
+  percentUsed: string;
+  status: string;
+};
 
 const BudgetManager = () => {
-  const [month, setMonth] = useState(new Date().getMonth());
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [budgets, setBudgets] = useState({});
-  const [alerts, setAlerts] = useState([]);
-  const [message, setMessage] = useState("");
+ const [month, setMonth] = useState<number>(new Date().getMonth());
+  const [year, setYear] = useState<number>(new Date().getFullYear());
+  const [budgets, setBudgets] = useState<Budgets>({});
+  const [alerts, setAlerts] = useState<Alert[]>([]);
+  const [message, setMessage] = useState<string>("");
 
   useEffect(() => {
     fetchAlerts();
   }, []);
 
-  const handleChange = (category, value) => {
+  const handleChange = (category:any, value:any) => {
     setBudgets((prev) => ({
       ...prev,
       [category]: Number(value),
@@ -35,7 +48,7 @@ const BudgetManager = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:3000/api/v1/user/budget/set",
+        "https://expense-tracker-gp93.onrender.com/api/v1/user/budget/set",
         { month, year, budgets },
         {
           headers: { Authorization: token },
@@ -53,7 +66,7 @@ const BudgetManager = () => {
   const fetchAlerts = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:3000/api/v1/user/budget/alerts", {
+      const res = await axios.get("https://expense-tracker-gp93.onrender.com/api/v1/user/budget/alerts", {
         headers: { Authorization: token },
       });
       setAlerts(res.data.alerts || []);
