@@ -5,7 +5,7 @@ import { UpdateExpenseModal } from "./UpdateExpenseModal";
 import SearchBar from "./SearchBar";
 import FilterBar from "./FilterPanel";
 
-const ExpensesTable = () => {
+const ExpensesTable = ({ refresh }: { refresh: boolean }) => {
   interface Expense {
   _id: string;
   amount: number;
@@ -56,7 +56,9 @@ const [editingExpense, setEditingExpense] = useState<Expense | null>(null);
   useEffect(() => {
     fetchExpenses();
   }, []);
-
+useEffect(() => {
+  fetchExpenses();
+}, [refresh]);
   useEffect(() => {
     let filtered = [...expenses];
 
