@@ -24,7 +24,7 @@ const DashBoard = () => {
         amount:0.0,
         category:"Food",
         date:new Date(),
-        paymentMethod:"Upi",
+        paymentMethod:"UPI",
         description:"",
         notes:""
 
