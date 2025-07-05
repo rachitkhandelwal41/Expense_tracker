@@ -13,6 +13,8 @@ const paymentMethod=["UPI", "Credit Card", "Debit Card", "Cash", "Net Banking"]
 
 const DashBoard = () => {
     const [showModal, setShowModal] = useState(false);
+     const [refreshExpenses, setRefreshExpenses] = useState(false);
+
     const navigate= useNavigate()
     function reportChange(){
          navigate("/reports")
@@ -59,7 +61,7 @@ const DashBoard = () => {
   description: "",
   notes: ""
 });
-
+setRefreshExpenses(prev => !prev);
        }
     }catch (error: any) {
      alert(error.message || "Something went wrong during signup.");
@@ -151,7 +153,7 @@ const DashBoard = () => {
      </div>
      <div className='mx-9'>
         
-             <ExpensesTable/>
+             <ExpensesTable refresh={refreshExpenses}/>
 
             
         </div>
